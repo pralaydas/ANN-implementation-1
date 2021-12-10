@@ -1,5 +1,5 @@
 params:
-  epochs: 30
+  epochs: 3
   batch_size: 32
   loss_function: sparse_categorical_crossentropy
   metrics: accuracy
