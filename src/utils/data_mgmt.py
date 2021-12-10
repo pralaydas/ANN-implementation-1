@@ -12,4 +12,4 @@ def get_data(validation_datasize):
     X_test = X_test / 255.
 
 
-    return (X_train_full, y_train_full),(X_valid,y_valid),(X_test, y_test)
+    return (X_train, y_train),(X_valid,y_valid),(X_test, y_test)
