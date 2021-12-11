@@ -1,4 +1,6 @@
 import tensorflow as tf
+import pandas as pd
+import matplotlib.pyplot as plt
 import time
 import os
 
@@ -24,3 +26,13 @@ def save_model(model, model_name, model_dir):
     unique_filename = get_unique_filename(model_name)
     path_to_model = os.path.join(model_dir, unique_filename)
     model.save(path_to_model)
+
+
+def save_plot(df,plot_name, plot_dir):
+    df.plot(figsize=(8, 5))
+    plt.grid(True)
+    plt.gca().set_ylim(0, 1)
+    
+    unique_filename = get_unique_filename(plot_name)
+    path_to_plot = os.path.join(plot_dir, unique_filename)
+    plt.savefig(path_to_plot)

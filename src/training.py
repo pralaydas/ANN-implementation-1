@@ -1,7 +1,8 @@
 from utils.common import read_config # from src.utils.common import read_config # this maybe useful sometimes
 from utils.data_mgmt import get_data # from src.utils.data_mgmt import get_data
-from utils.model import create_model, save_model
+from utils.model import create_model, save_model, save_plot
 import os
+import pandas as pd
 
 import argparse
 
@@ -12,7 +13,7 @@ def training(config_path):
     validation_datasize = config["params"]["validation_datasize"]
     (X_train, y_train),(X_valid,y_valid),(X_test, y_test) = get_data(validation_datasize)
 
-
+    #train the model
     LOSS_FUNCTION = config["params"]["loss_function"]
     OPTIMIZER = config["params"]["optimizer"]
     METRICS = config["params"]["metrics"]
@@ -34,6 +35,15 @@ def training(config_path):
     
     save_model(model, model_name, model_dir_path)
 
+    #plot the model
+    plot_dir = config["artifacts"]["plot_dir"]
+    
+    plot_dir_path = os.path.join(artifacts_dir, plot_dir)
+    os.makedirs(plot_dir_path, exist_ok = True)
+
+    plot_name = config["artifacts"]["plot_name"]
+    df = pd.DataFrame(history.history)
+    save_plot(df, plot_name, plot_dir_path)
 
 
 
