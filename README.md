@@ -4,7 +4,7 @@ This is an implementation of basic artificial neural network
 
 # important commands---------
 
-### cerating environments
+### cerating local environments
 ```bash
 conda create --prefix ./envs python=3.7 -y
 ```
