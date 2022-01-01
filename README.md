@@ -1,4 +1,4 @@
-# ANN-implementation-1
+# Modular ANN implementation
 This is an implementation of basic artificial neural network 
 
 
