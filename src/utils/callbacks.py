@@ -11,7 +11,7 @@ def get_timestamp(name):
 def get_callbacks(config, X_train):
     logs = config["logs"]
     unique_dir_name = get_timestamp("tb_logs")
-    TENSORBOARD_ROOT_LOG_DIR = os.path.join(logs["logs_dir"], logs["TENSORBOARD_ROOT_LOG_DIR"], unique_dir_name)
+    TENSORBOARD_ROOT_LOG_DIR = os.path.join(logs["log_dir"], logs["tensorboard_logs"], unique_dir_name)
 
     os.makedirs(TENSORBOARD_ROOT_LOG_DIR, exist_ok=True)
 
@@ -29,7 +29,7 @@ def get_callbacks(config, X_train):
         restore_best_weights=params["restore_best_weights"])
 
     artifacts = config["artifacts"]
-    CKPT_dir = os.path.join(artifacts["artifacts_dir"], artifacts["CHECKPOINT_DIR"])
+    CKPT_dir = os.path.join(artifacts["artifacts_dir"], artifacts["checkpoint_dir"])
     os.makedirs(CKPT_dir, exist_ok=True)
 
     CKPT_path = os.path.join(CKPT_dir, "model_ckpt.h5")
