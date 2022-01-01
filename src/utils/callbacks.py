@@ -25,6 +25,8 @@ def get_callbacks(config, X_train):
 
     params = config["params"]
     early_stopping_cb = tf.keras.callbacks.EarlyStopping(
+        monitor= 'val_loss',
+        min_delta=0.0005
         patience=params["patience"], 
         restore_best_weights=params["restore_best_weights"])
 
