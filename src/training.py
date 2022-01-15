@@ -1,7 +1,8 @@
-from utils.common import read_config # from src.utils.common import read_config # this maybe useful sometimes
-from utils.data_mgmt import get_data # from src.utils.data_mgmt import get_data
-from utils.model import create_model, save_model, save_plot
-from utils.callbacks import get_callbacks
+# if you don't use local file installation in setup.py the write -> from utils.common import read_config
+from src.utils.common import read_config 
+from src.utils.data_mgmt import get_data 
+from src.utils.model import create_model, save_model, save_plot
+from src.utils.callbacks import get_callbacks
 import os
 import pandas as pd
 

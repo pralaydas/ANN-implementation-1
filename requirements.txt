@@ -6,4 +6,4 @@ pandas
 PyYAML
 
 ## local package installation
--e. # to install local packages
+-e . # to install local packages
